@@ -1,9 +1,6 @@
-# movie-rest-api
+# Fault-tolerant API demo with Quarkus
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
-
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
-
+A Fault-tolerant API that dictate whether and when executions should take place, and fallbacks offer an alternative result when an execution does not complete successfully.
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
@@ -51,11 +48,3 @@ If you want to learn more about building native executables, please consult http
 
 - REST Client Reactive ([guide](https://quarkus.io/guides/rest-client-reactive)): Call REST services reactively
 - RESTEasy Reactive ([guide](https://quarkus.io/guides/resteasy-reactive)): A JAX-RS implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-
-## Provided Code
-
-### RESTEasy Reactive
-
-Easily start your Reactive RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
