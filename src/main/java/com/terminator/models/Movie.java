@@ -1,4 +1,4 @@
-package com.terminator.model;
+package com.terminator.models;
 
 import java.net.URL;
 import java.util.List;

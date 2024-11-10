@@ -1,4 +1,4 @@
-package com.terminator.model;
+package com.terminator.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
