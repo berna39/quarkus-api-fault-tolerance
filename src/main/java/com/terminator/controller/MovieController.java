@@ -26,7 +26,7 @@ import com.terminator.restclients.MovieProxy;
 public class MovieController {
     
     @RestClient
-    MovieProxy proxy;
+    MovieProxy movieProxy;
 
     @RestClient
     EpisodeProxy episodeProxy;
@@ -35,13 +35,13 @@ public class MovieController {
     Logger logger;
 
     @GET
-    @Fallback(fallbackMethod = "fallbackMovie", skipOn = {IllegalArgumentException.class, WebApplicationException.class})
+    @Fallback(fallbackMethod = "fallbackMovieRequest", skipOn = {IllegalArgumentException.class, WebApplicationException.class})
     public Response findAll(@QueryParam("title") String title) {
         if(title == null)
             throw new IllegalArgumentException("Bad request, please check your input query");
 
         logger.infov("incoming movie request {0}", title);
-        Movie movie = proxy.get(title);
+        Movie movie = movieProxy.get(title);
         List<Episode> episodes = episodeProxy.get(movie.getId());
         movie.setEpisodes(episodes);
 
@@ -49,7 +49,7 @@ public class MovieController {
                         .build();
     }
 
-    private Response fallbackMovie(String title) {
+    private Response fallbackMovieRequest(String title) {
         logger.infov("executing fallback request request from title: {0}", title);
         return Response.ok(new ArrayList<>())
                         .build();

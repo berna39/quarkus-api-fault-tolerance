@@ -1,0 +1,9 @@
+quarkus:
+  rest-client:
+    http2: true
+    movie-api:
+      url: https://api.tvmaze.com
+      scope: jakarta.inject.Singleton
+    post-api:
+      url: https://jsonplaceholder.typicode.com
+      scope: jakarta.inject.Singleton
